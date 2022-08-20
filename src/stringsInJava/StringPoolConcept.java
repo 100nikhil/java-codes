@@ -12,7 +12,8 @@ package stringsInJava;
  * a & b both refer to same object in memory or same string in string constant pool. So only one object is created
  * here.
  * 
- * If we create using new String() , Then new object is created every time in heap memory
+ * If we create using new String() , Then new object is created every time in heap memory and 1 in the string
+ * constant pool if not present.
  * 
  * if we call intern() , It forcefully stop the behaviour of new String(), and add the object in string constant pool
  * or set the reference to already present string in string constant pool.
@@ -31,10 +32,17 @@ public class StringPoolConcept {
 		String s3 = new String("java");  //new object created in heap
 		String s4 = new String("java").intern();  //new object NOT created refers to object already present in SCP, created by s1
 		
+		String s5 = new String("python"); //two objects created one in heap & one in SCP --- 2
+		String s6 = new String("python"); //only one new object created in heap  ---- 1
+		String s7 = "python"; //new object is not created ---- 0
+		
 		System.out.println(s1==s2);
 		System.out.println(s1==s3);
 		System.out.println(s1==s4);
 		
+		System.out.println(s5.hashCode());
+		System.out.println(s6.hashCode());
+		System.out.println(s7.hashCode());
 		//So total 2 objects are created by this program
 	}
 

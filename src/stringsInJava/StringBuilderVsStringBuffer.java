@@ -2,6 +2,7 @@
  * StringBuilder is fast but not synchronized.
  * StringBuffer is thread safe & is synchronized.
 */
+
 package stringsInJava;
 
 class Class1 extends Thread{

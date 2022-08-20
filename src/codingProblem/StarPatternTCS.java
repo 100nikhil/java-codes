@@ -20,7 +20,7 @@ public class StarPatternTCS {
 	}
 
 	public static void main(String[] args) {
-		star(10);
+		star(5);
 	}
 
 }
